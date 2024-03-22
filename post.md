@@ -6,6 +6,8 @@ In this lab we build a circuit that reads a binary number and determines if that
 
 Main goal: Build a circuit that reads a binary number and outputs high when the string is divisible by 3 and low otherwise.
 
+![image_50381569](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/14c713e6-883f-43a0-bd29-3f533d1745a3)
+
 
 ## Materials 
 The materials we will be using in this lab are:
