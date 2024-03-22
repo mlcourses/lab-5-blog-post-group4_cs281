@@ -6,9 +6,6 @@ In this lab we build a circuit that reads a binary number and determines if that
 
 Main goal: Build a circuit that reads a binary number and outputs high when the string is divisible by 3 and low otherwise.
 
-![image_50381569](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/14c713e6-883f-43a0-bd29-3f533d1745a3)
-
-
 ## Materials 
 The materials we will be using in this lab are:
 ..* PB-503 breadboard
@@ -23,27 +20,39 @@ The materials we will be using in this lab are:
 
 ## Project Steps 
 Step 1: Build a DFA 
-In this step we will build a DFA that consists of three states, in which the only binary strings that will be accepted are those who are divisible by three in decimal. Only one state will be an accepting state (q0) and each state will have precisely two arrows, with a 1 and with a 0. (add photo)
+In this step we will build a DFA that consists of three states, in which the only binary strings that will be accepted are those who are divisible by three in decimal. Only one state will be an accepting state (q0) and each state will have precisely two arrows, with a 1 and with a 0. 
+
+![image_50381569](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/14c713e6-883f-43a0-bd29-3f533d1745a3)
 
 **Step 2: Decide how many jk flip flops you need**
 
-In this step, we decide how many jk flip flops we need based on the number of states in the DFA. we always have log_2(#number of states) and round this up. In this case, since we have 3 states we will have 2 jk flip flops. (add photo)
+In this step, we decide how many jk flip flops we need based on the number of states in the DFA. we always have log_2(#number of states) and round this up. In this case, since we have 3 states we will have 2 jk flip flops.
+
+![image_50382849](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/667d08e5-4ca8-40e0-ba4d-f0c04ce464f5)
 
 **Step 3: design a logic for the two combinational circuits, next-state and output.**
 
-In this step we are to design a mini truth table that has three columns: state, Q1, Q0. at each state we decide what Q1, Q0 are. Since we have only three states, and there are 4 rows (00,01,10,11), the last row 11 will go to a don't care state x. (add photo)
+In this step we are to design a mini truth table that has three columns: state, Q1, Q0. at each state we decide what Q1, Q0 are. Since we have only three states, and there are 4 rows (00,01,10,11), the last row 11 will go to a don't care state x.
  
 **Step 4: Create a Boolean Truth Table (function table) diagram**
 
 In this step we are to build a function table with the current state and the corresponding Q’s, then a column with the next input (x), then the new state and its corresponding Q’s. After that we fill the four columns (j1,k1,j0,k0 ) based on the values of the initial state Q1 and Q0 to the values of the new states Q1’ and Q0’. Then, the last column will be the output, which is basically indicating if we we are accepting the string (1 if so)  or rejecting it (0 if so). 
 
+![image_50435841](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/bc6cbd47-ee51-4145-8e2c-e7b2ebcd0a5a)
+
 **Step 5: build a K-map for each output**
 
 In this step we are to build a k-map for each J, K, and the out value. The reason we are doing that is because we want to simplify as much as possible our logic operands for the circuit we are going to build and k-maps are the perfect tool to simplify complicated boolean algebra. 
 
+![image_50382081](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/0b5f9118-af23-4a7c-af8a-6d67c61261ab)
+
+![image_50364929](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/17227382-9edc-4e63-821c-dfcc149fd107)
+
 **Step 6: Build the circuit**
 
 This is the step where we are actually building the circuit. Steps 1-5 were necessary in order to get to this step, and now when we have the simplified algebra from the k-maps we can build the circuit.
+
+![image_50413825](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/210d3b48-7a01-4888-bf4f-e211a4ebffb4)
 
 ## Observation and Takeaways
 We have a not gate, two gates, an xor gate, a clock, and two jk flip flops.
