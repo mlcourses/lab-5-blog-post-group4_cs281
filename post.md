@@ -6,6 +6,7 @@ In this lab we build a circuit that reads a binary number and determines if that
 
 Main goal: Build a circuit that reads a binary number and outputs high when the string is divisible by 3 and low otherwise.
 
+
 ## Materials 
 The materials we will be using in this lab are:
 ..* PB-503 breadboard
@@ -17,6 +18,7 @@ The materials we will be using in this lab are:
 ..* 7408 chip (AND gate)
 ..* 7476JKff (jk flip flop)
 ..* 7486 chip (XOR gate)
+
 
 ## Project Steps 
 Step 1: Build a DFA 
@@ -54,6 +56,7 @@ This is the step where we are actually building the circuit. Steps 1-5 were nece
 
 ![image_50413825](https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/210d3b48-7a01-4888-bf4f-e211a4ebffb4)
 
+
 ## Observation and Takeaways
 We have a not gate, two gates, an xor gate, a clock, and two jk flip flops.
 We start from input x, which is going to be inverted and connected to k1 (second flip flop). The output of the first flip flop will go to an and gate with the inverted x, and their output will go to j1 (second flip flop). 
@@ -65,6 +68,9 @@ We wire output to the last logic probe, that way we can keep track of the result
 ## Testing
 After building the circuit, we proceeded to test it out. To input the number, we simply flip the switch for x, flipping it to 1 if we want to append 1 to the back of the binary number and vice versa, flipping it to 0 if we want to append 0 to the back of the binary number. The circuit will update depending on the clock, so if we want to update the binary string, we simply push the button acting as the clock, and then the circuit will update and the new bit will be added to the string. We tested with numbers both divisible by 3 and not divisible by 3, and the circuit behaved like what we expected exactly like the DFA. As long as it is not in an accepting state i.e. the current number is not divisible by 3, the probing light will be set to low; and whenever we move the data input to or back to the accepting state i.e. the current number is divisible by 3, the probe will be set to high, which is what we desire. We also tested out the CLEAR feature for the FFs, and it also worked as expected: when we set the switch for the reset to low and then to high again, all of the memory is cleared off, and we can input a new binary number to the circuit.
 
+https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/a35830f7-0cfe-4e88-aed3-09df2e793192
+
+https://github.com/mlcourses/lab-5-blog-post-group4_cs281/assets/122911760/6eb72310-bf05-4380-a7a7-d7a5f4bf9bc5
 
 
 ## Conclusion
